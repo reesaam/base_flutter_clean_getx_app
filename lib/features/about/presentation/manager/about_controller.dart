@@ -1,4 +1,7 @@
+import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_controller.dart';
+import '../../../../data/info/app_developer_info.dart';
+import '../../../../data/info/app_info.dart';
 import '../../../../data/info/app_page_details.dart';
 
 class AboutController extends CoreController {
@@ -17,5 +20,19 @@ class AboutController extends CoreController {
     pageDetail = AppPageDetails.about;
   }
 
-  _fillData() {}
+  _fillData() {
+    listTitles = List<String>.of([
+      Texts.to.aboutTitlesAppName,
+      Texts.to.aboutTitlesDeveloperName,
+      Texts.to.aboutTitlesDeveloperWebsite,
+      Texts.to.aboutTitlesDeveloperLinkedIn,
+    ]);
+
+    listItems = List<String>.of([
+      AppInfo.appName,
+      AppDeveloperInfo.fullName,
+      AppDeveloperInfo.website,
+      AppDeveloperInfo.linkedin,
+    ]);
+  }
 }
