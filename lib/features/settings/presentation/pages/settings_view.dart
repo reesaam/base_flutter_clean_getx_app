@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extension_string.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../../../../core/app_localization.dart';
