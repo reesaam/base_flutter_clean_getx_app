@@ -11,8 +11,6 @@ import '../data/storage/app_local_storage.dart';
 import '../features/update/data/repositories/update_repository.dart';
 import 'app_localization.dart';
 
-
-
 void appDebugPrint(message) => AppInfo.isRelease ? null : debugPrint('$message');
 void appLogPrint(message) => debugPrint('[LOG] ** $message **');
 
