@@ -6,13 +6,12 @@ import 'package:get/get.dart';
 
 import '../app/components/dialogs/app_alert_dialogs.dart';
 import '../app/components/general_widgets/app_snack_bars.dart';
+import '../data/info/app_info.dart';
 import '../data/storage/app_local_storage.dart';
 import '../features/update/data/repositories/update_repository.dart';
 import 'app_localization.dart';
 
-bool get isRelease => true;
-
-void appDebugPrint(message) => isRelease ? null : debugPrint('$message');
+void appDebugPrint(message) => AppInfo.isRelease ? null : debugPrint('$message');
 void appLogPrint(message) => debugPrint('[LOG] ** $message **');
 
 void popPage() {

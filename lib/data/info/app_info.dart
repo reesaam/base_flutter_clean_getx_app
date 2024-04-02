@@ -14,5 +14,7 @@ class AppInfo {
   static String get subDomain => 'basefluttercleangetxapp';
   static String get fileName => '${AppInfo.appNameInitials}_Backup.json';
 
+  ///Core Flags
+  static bool get isRelease => true;
   static bool get checkUpdate => false;
 }
