@@ -10,6 +10,7 @@ class AppPageDetails {
     settings,
     about,
     update,
+    notFound,
   ];
 
   static List<AppPageDetail> get listAdminPages => [
@@ -68,5 +69,10 @@ class AppPageDetails {
     pageRoute: AppRoutes.update,
     iconCode: AppIcons.update.icon!.codePoint,
     drawerPresence: true,
+  );
+
+  static AppPageDetail notFound = AppPageDetail(
+    pageName: Texts.to.notFoundPageName,
+    pageRoute: AppRoutes.notFound,
   );
 }

@@ -8,6 +8,7 @@
     "settingsPageName": "Settings",
     "updatePageName": "Update",
     "aboutPageName": "About",
+    "notFoundPageName": "Page Not Found",
 
     "empty": "",
     "version": "Version",

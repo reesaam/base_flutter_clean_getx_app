@@ -120,6 +120,16 @@ class S {
     );
   }
 
+  /// `Page Not Found`
+  String get notFoundPageName {
+    return Intl.message(
+      'Page Not Found',
+      name: 'notFoundPageName',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// ``
   String get empty {
     return Intl.message(

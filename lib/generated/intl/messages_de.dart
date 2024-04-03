@@ -67,6 +67,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "no": MessageLookupByLibrary.simpleMessage("No"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("Not Available"),
         "notAvailableInitials": MessageLookupByLibrary.simpleMessage("N/A"),
+        "notFoundPageName":
+            MessageLookupByLibrary.simpleMessage("Page Not Found"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "settingsAppbarMenuResetSettings":
             MessageLookupByLibrary.simpleMessage("Reset All Settings"),
