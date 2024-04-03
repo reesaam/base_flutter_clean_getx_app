@@ -24,7 +24,8 @@ if (flutterVersionName == null) {
 
 android {
     namespace "ir.resam.base1.base_flutter_clean_getx_app"
-    compileSdkVersion flutter.compileSdkVersion
+    //compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {

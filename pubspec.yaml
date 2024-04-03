@@ -14,89 +14,91 @@ dependencies:
     sdk: flutter
 
   #State Manager
-  get: any
-  #bloc: any
-  #flutter_bloc: any
+  get: ^4.6.6
+  #bloc: ^8.1.4
+  #flutter_bloc: ^8.1.5
 
   #Dependency Injection
-  #get_it: any
+  #get_it: ^7.6.7
 
   #Code Generator
-  freezed: any
+  freezed: ^2.4.7
 
   #Tools
-  dartz: any
-  json_annotation: any
+  dartz: ^0.10.1
+  json_annotation: ^4.8.1
 
   #File
-  open_file_plus: any
-  flutter_file_dialog: any
-  path_provider: any
+  open_file_plus: ^3.4.1+1
+  flutter_file_dialog: ^3.0.2
+  path_provider: ^2.1.2
 
   #Device Related and Resources
-  permission_handler: any
-  #permission_handler_web: any
-  mobile_number: any
-  device_info_plus: any
-  package_info_plus: any
-  flutter_contacts: any
-  camera: any
+  permission_handler: ^10.4.5
+  #permission_handler_web: ^0.0.2
+  mobile_number: ^2.1.1
+  device_info_plus: ^9.1.2
+  package_info_plus: ^5.0.1
+  flutter_contacts: ^1.1.7+1
+  camera: ^0.10.5+9
 
   #Remote and Connection
-  dio: any
-  html: any
-  #http: any
-  connectivity_plus: any
-  internet_connection_checker_plus: any
-  url_launcher: any
-  url_strategy: any
+  dio: ^5.4.2+1
+  html: ^0.15.4
+  #http: ^1.2.1
+  #curl_logger_dio_interceptor: ^1.0.0
+  connectivity_plus: ^5.0.0
+  internet_connection_checker_plus: ^2.2.0
+  url_launcher: ^6.2.5
+  url_strategy: ^0.2.0
 
   #Storage
-  shared_preferences: any
-  get_storage: any
+  shared_preferences: ^2.2.2
+  get_storage: ^2.1.1
 
   #UI
-  flutter_animate: any
+  flutter_animate: ^4.5.0
 
   #Text and Text-Field
-  auto_size_text: any
-  mask_text_input_formatter: any
+  auto_size_text: ^3.0.0
+  mask_text_input_formatter: ^2.9.0
 
   #Widget
-  loading_animation_widget: any
+  loading_animation_widget: ^1.2.1
 
   #Localization
-  intl: any
-  timezone: any
-  persian_datetime_picker: any
+  intl: ^0.18.1
+  timezone: ^0.9.2
+  #flutter_timezone: ^1.0.8
+  persian_datetime_picker: ^2.6.0
 
   #Docs
-  dartdoc: any
+  dartdoc: ^6.3.0
 
   #Sharing
-  share_plus: any
+  share_plus: ^7.2.2
 
-  cupertino_icons: any
+  cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   #Code Generator
-  build_runner: any
-  json_serializable: any
-  freezed_annotation: any
-  injectable_generator: any
+  build_runner: ^2.4.9
+  json_serializable: ^6.7.1
+  freezed_annotation: ^2.4.1
+  injectable_generator: ^2.2.0
 
   #Test
-  build_test: any
-  build_web_compilers: any
-  responsive_framework: any
+  build_test: ^2.2.2
+  build_web_compilers: ^4.0.10
+  responsive_framework: ^1.4.0
 
   #Icon
-  flutter_launcher_icons: any
+  flutter_launcher_icons: ^0.13.1
 
-  flutter_lints: any
+  flutter_lints: ^3.0.2
 
 flutter_intl:
   enabled: true
