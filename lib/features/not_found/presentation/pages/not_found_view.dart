@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_clean_getx_app/app/components/main_components/app_bar.dart';
-import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extension_icon.dart';
 import 'package:get/get.dart';
 
+import '../../../../app/components/main_components/app_bar.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_view.dart';
 import '../manager/not_found_controller.dart';

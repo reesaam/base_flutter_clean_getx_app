@@ -46,7 +46,7 @@ flutter build web --web-renderer canvaskit --release
 ## Others
 ### Launcher Icon
 - For any possible change in Launcher Icon
-- first change the file in assets : <<assets/logos/paria_logo.png>> (Please replace the file)
+- first change the file in assets : <<assets/logos/app_logo.png>> (Please replace the file)
 - then run:
 ```
 dart run flutter_launcher_icons -f flutter_launcher_icons.yaml
