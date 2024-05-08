@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  http_interceptor_plus
   url_launcher_linux
 )
 
