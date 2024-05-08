@@ -56,6 +56,11 @@ dependencies:
   shared_preferences: ^2.2.2
   get_storage: ^2.1.1
 
+  #DataBase
+  mongo_dart: ^0.9.4
+  realm: ^2.1.0
+  flutter_mongodb_realm: ^2.3.0
+
   #UI
   flutter_animate: ^4.5.0
 
