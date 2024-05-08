@@ -98,7 +98,10 @@ dev_dependencies:
   #Icon
   flutter_launcher_icons: ^0.13.1
 
+  #Lints
   flutter_lints: ^3.0.2
+  lint: ^2.3.0
+  lints: ^3.0.0
 
 flutter_intl:
   enabled: true
