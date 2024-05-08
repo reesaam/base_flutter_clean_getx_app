@@ -53,7 +53,7 @@ class AppPageDetails {
     pageName: Texts.to.settingsPageName,
     pageRoute: AppRoutes.settings,
     iconCode: AppIcons.settings.icon!.codePoint,
-    bottomBarItemNumber: 3,
+    bottomBarItemNumber: 1,
     drawerPresence: true,
   );
 

@@ -66,6 +66,6 @@ class SettingsPage extends CoreView<SettingsController> {
       ]);
 
   Widget _widgetStorage() => SettingsSectionWidget(title: Texts.to.settingsSectionTitleStorage, widgets: [
-        SettingsSectionItemWidget(text: Texts.to.settingsSectionStorageItemEraseAllData, wholeItemFunction: controller.clearAllData()),
+        SettingsSectionItemWidget(text: Texts.to.settingsSectionStorageItemEraseAllData, wholeItemFunction: controller.clearAllData),
       ]);
 }
