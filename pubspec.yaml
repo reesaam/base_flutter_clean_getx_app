@@ -83,6 +83,10 @@ dependencies:
   #Sharing
   share_plus: ^7.2.2
 
+  #Lints
+  lint: ^2.3.0
+  lints: ^3.0.0
+
   cupertino_icons: ^1.0.6
 
 dev_dependencies:
