@@ -27,12 +27,17 @@ class AppLocalization {
 
   TextDirection defaultTextDirection = TextDirection.ltr;
 
-  getDefaultLocale() => AppLocalStorage.to.loadSettings().language!.getLocale;
+  Locale? getDefaultLocale() {
+    var appSettings = AppLocalStorage.to.loadSettings();
+    return appSettings?.language.getLocale ?? defaultLanguage;
+  }
 
-  getTextDirection() =>
-      AppLocalStorage.to.loadSettings().language!.getLocale == persian
-          ? TextDirection.rtl
-          : defaultTextDirection;
+  TextDirection? getTextDirection() {
+    var appSettings =  AppLocalStorage.to.loadSettings();
+    return appSettings?.language.getLocale == persian
+        ? TextDirection.rtl
+        : defaultTextDirection;
+  }
 }
 
 class Texts {

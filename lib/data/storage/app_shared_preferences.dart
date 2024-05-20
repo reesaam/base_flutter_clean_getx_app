@@ -2,15 +2,14 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../../core/app_extensions/data_models_extensions/extension_settings_entity.dart';
-import '../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
+import '../data_entities/core_data_entities/app_data/data/models/app_data_model/app_data_model.dart';
 import '../resources/app_enums.dart';
 
 class AppSharedPreferences {
   static AppSharedPreferences get to => Get.find();
 
   ///Keys
-  final _keySettings = AppStorageKeys.keySettings.name;
+  final _keyAppData = AppStorageKeys.keyAppData.name;
 
   _saveFunction(data, String key) async {
     SharedPreferences sp = await SharedPreferences.getInstance();
@@ -24,15 +23,13 @@ class AppSharedPreferences {
     return data == null ? null : json.decode(data);
   }
 
-  void saveData() async {
-    AppSettingDataEntity storageSettings = const AppSettingDataEntity().loadFromStorage;
-    _saveFunction(storageSettings, _keySettings);
+  void saveData(AppDataModel appData) async {
+    _saveFunction(appData, _keyAppData);
   }
 
-  void loadData() async {
-    var jsonDataSettings = await _loadFunction(_keySettings);
-    AppSettingDataEntity settingsData = jsonDataSettings == null ? const AppSettingDataEntity() : AppSettingDataEntity.fromJson(json.decode(jsonDataSettings));
-    settingsData.saveOnStorage;
+  Future<AppDataModel?> loadData() async {
+    var jsonAppData = await _loadFunction(_keyAppData);
+    return jsonAppData == null ? null : AppDataModel.fromJson(json.decode(jsonAppData));
   }
 
   void clearData() async {

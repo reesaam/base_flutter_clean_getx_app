@@ -22,7 +22,7 @@ AppVersion _$AppVersionFromJson(Map<String, dynamic> json) {
 mixin _$AppVersion {
   String get version => throw _privateConstructorUsedError;
   List<String>? get changes => throw _privateConstructorUsedError;
-  bool? get released => throw _privateConstructorUsedError;
+  AppVersionTypes? get versionType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,8 @@ abstract class $AppVersionCopyWith<$Res> {
           AppVersion value, $Res Function(AppVersion) then) =
       _$AppVersionCopyWithImpl<$Res, AppVersion>;
   @useResult
-  $Res call({String version, List<String>? changes, bool? released});
+  $Res call(
+      {String version, List<String>? changes, AppVersionTypes? versionType});
 }
 
 /// @nodoc
@@ -54,7 +55,7 @@ class _$AppVersionCopyWithImpl<$Res, $Val extends AppVersion>
   $Res call({
     Object? version = null,
     Object? changes = freezed,
-    Object? released = freezed,
+    Object? versionType = freezed,
   }) {
     return _then(_value.copyWith(
       version: null == version
@@ -65,10 +66,10 @@ class _$AppVersionCopyWithImpl<$Res, $Val extends AppVersion>
           ? _value.changes
           : changes // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      released: freezed == released
-          ? _value.released
-          : released // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      versionType: freezed == versionType
+          ? _value.versionType
+          : versionType // ignore: cast_nullable_to_non_nullable
+              as AppVersionTypes?,
     ) as $Val);
   }
 }
@@ -81,7 +82,8 @@ abstract class _$$AppVersionImplCopyWith<$Res>
       __$$AppVersionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String version, List<String>? changes, bool? released});
+  $Res call(
+      {String version, List<String>? changes, AppVersionTypes? versionType});
 }
 
 /// @nodoc
@@ -97,7 +99,7 @@ class __$$AppVersionImplCopyWithImpl<$Res>
   $Res call({
     Object? version = null,
     Object? changes = freezed,
-    Object? released = freezed,
+    Object? versionType = freezed,
   }) {
     return _then(_$AppVersionImpl(
       version: null == version
@@ -108,10 +110,10 @@ class __$$AppVersionImplCopyWithImpl<$Res>
           ? _value._changes
           : changes // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      released: freezed == released
-          ? _value.released
-          : released // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      versionType: freezed == versionType
+          ? _value.versionType
+          : versionType // ignore: cast_nullable_to_non_nullable
+              as AppVersionTypes?,
     ));
   }
 }
@@ -120,7 +122,7 @@ class __$$AppVersionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppVersionImpl implements _AppVersion {
   const _$AppVersionImpl(
-      {required this.version, final List<String>? changes, this.released})
+      {required this.version, final List<String>? changes, this.versionType})
       : _changes = changes;
 
   factory _$AppVersionImpl.fromJson(Map<String, dynamic> json) =>
@@ -139,11 +141,11 @@ class _$AppVersionImpl implements _AppVersion {
   }
 
   @override
-  final bool? released;
+  final AppVersionTypes? versionType;
 
   @override
   String toString() {
-    return 'AppVersion(version: $version, changes: $changes, released: $released)';
+    return 'AppVersion(version: $version, changes: $changes, versionType: $versionType)';
   }
 
   @override
@@ -153,14 +155,14 @@ class _$AppVersionImpl implements _AppVersion {
             other is _$AppVersionImpl &&
             (identical(other.version, version) || other.version == version) &&
             const DeepCollectionEquality().equals(other._changes, _changes) &&
-            (identical(other.released, released) ||
-                other.released == released));
+            (identical(other.versionType, versionType) ||
+                other.versionType == versionType));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, version,
-      const DeepCollectionEquality().hash(_changes), released);
+      const DeepCollectionEquality().hash(_changes), versionType);
 
   @JsonKey(ignore: true)
   @override
@@ -180,7 +182,7 @@ abstract class _AppVersion implements AppVersion {
   const factory _AppVersion(
       {required final String version,
       final List<String>? changes,
-      final bool? released}) = _$AppVersionImpl;
+      final AppVersionTypes? versionType}) = _$AppVersionImpl;
 
   factory _AppVersion.fromJson(Map<String, dynamic> json) =
       _$AppVersionImpl.fromJson;
@@ -190,7 +192,7 @@ abstract class _AppVersion implements AppVersion {
   @override
   List<String>? get changes;
   @override
-  bool? get released;
+  AppVersionTypes? get versionType;
   @override
   @JsonKey(ignore: true)
   _$$AppVersionImplCopyWith<_$AppVersionImpl> get copyWith =>

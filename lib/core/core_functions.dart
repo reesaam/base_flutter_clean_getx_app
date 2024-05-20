@@ -8,7 +8,7 @@ import '../app/components/dialogs/app_alert_dialogs.dart';
 import '../app/components/general_widgets/app_snack_bars.dart';
 import '../data/info/app_info.dart';
 import '../data/storage/app_local_storage.dart';
-import '../features/update/data/repositories/update_repository.dart';
+import '../features/update/domain/use_cases/update_version_usecase.dart';
 import 'app_localization.dart';
 
 void appDebugPrint(message) => AppInfo.isRelease ? null : debugPrint('$message');
@@ -18,14 +18,15 @@ void popPage() {
   Get.back();
 }
 
-void saveAppData() => AppLocalStorage.to.saveAllData();
+void saveAppData() => AppLocalStorage.to.saveAllDataToStorage();
 
-void loadAppData() => AppLocalStorage.to.loadAllData();
+void loadAppData() => AppLocalStorage.to.loadAllDataFromStorage();
 
 void clearAppData() => AppLocalStorage.to.clearStorage();
 
 Future<String> checkAvailableVersion() async {
-  var result = await UpdateRepository.to.getAvailableVersion();
+  final UpdateVersionUseCase updateVersionUseCase = UpdateVersionUseCase(updateRepository: Get.find());
+  var result = await updateVersionUseCase.call();
   return result.fold((l) => Texts.to.notAvailable, (r) => r);
 }
 
@@ -35,7 +36,7 @@ void appExitDialog() => AppAlertDialogs().withOkCancel(title: Texts.to.appExit, 
 
 void appExit() {
   appLogPrint('App Exit Triggered');
-  AppLocalStorage.to.saveAllData();
+  AppLocalStorage.to.saveAllDataToStorage();
   appLogPrint('All App Data Saved');
   exit(0);
 }

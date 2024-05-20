@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../resources/app_enums.dart';
+
 part 'app_version.freezed.dart';
 part 'app_version.g.dart';
 
@@ -8,7 +10,7 @@ class AppVersion with _$AppVersion {
   const factory AppVersion({
     required final String version,
     final List<String>? changes,
-    final bool? released,
+    final AppVersionTypes? versionType,
   }) = _AppVersion;
 
   factory AppVersion.fromJson(Map<String, dynamic> json) => _$AppVersionFromJson(json);

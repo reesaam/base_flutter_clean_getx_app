@@ -12,18 +12,10 @@ extension LanguageName on Locale {
 extension LanguageModel on Locale {
   AppLanguages get getLanguage {
     AppLanguages language = AppLanguages.english;
-    switch (languageCode) {
-      case 'en':
-        language = AppLanguages.english;
-        break;
-      case 'de':
-        language = AppLanguages.deutsch;
-        break;
-      case 'fa':
-        language = AppLanguages.persian;
-        break;
-      default:
-        break;
+    for (var lang in AppLanguages.values) {
+      if (languageCode == lang.locale.languageCode) {
+        language = lang;
+      }
     }
     return language;
   }

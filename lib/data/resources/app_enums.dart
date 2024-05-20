@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 enum AppDataVersions {
   v1(1);
 
   final int number;
   const AppDataVersions(this.number);
+}
+
+enum AppVersionTypes {
+  release,
+  beta,
+  hidden,
+}
+
+enum APIVersions {
+  v1;
+
+  String get getValue => name;
+}
+
+enum APISections {
+  update;
+
+  String get getValue => name;
 }
 
 enum AppRoutes {
@@ -39,5 +56,8 @@ enum AppLanguages {
 }
 
 enum AppStorageKeys {
+  keyAppData,
+  keyAppDataVersion,
+  keyAppVersion,
   keySettings,
 }

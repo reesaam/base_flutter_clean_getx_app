@@ -10,9 +10,13 @@ class AppInfo {
   static AppVersion get appCurrentVersion => versions.versionsList.last;
   static int get appVersionsCounter => versions.versionsList.length;
 
-  static String get baseUrl => 'resam-t.ir';
+  static String get baseUrl => 'www.resam-t.ir';
   static String get subDomain => 'basefluttercleangetxapp';
-  static String get fileName => '${AppInfo.appNameInitials}_Backup.json';
+
+  //FileNames
+  static String get fileNameAPK => '${AppInfo.appNameInitials}_android.apk';
+  static String get fileNameIPA => '${AppInfo.appNameInitials}_ios.ipa';
+  static String get fileNameBackup => '${AppInfo.appNameInitials}_Backup.json';
 
   ///Core Flags
   static bool get isRelease => true;

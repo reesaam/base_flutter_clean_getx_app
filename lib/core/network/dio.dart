@@ -1,9 +1,14 @@
 import 'package:dio/dio.dart';
+import 'package:get/get.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../data/info/app_urls.dart';
 import '../../data/resources/app_texts.dart';
 
-abstract class DioCore {
+@injectable
+class DioCore {
+
+  static DioCore get to => Get.find(tag: 'DioCore');
 
   int get _defaultTimeOut => 15;
 

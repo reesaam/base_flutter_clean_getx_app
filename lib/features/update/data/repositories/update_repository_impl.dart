@@ -9,19 +9,18 @@ import 'update_repository.dart';
 
 @Injectable(as: UpdateRepository)
 class UpdateRepositoryImpl implements UpdateRepository {
-  final UpdateRemoteDataSource updateRemoteDataSource;
-
-  UpdateRepositoryImpl({required this.updateRemoteDataSource});
+  final UpdateRemoteDataSource dataSource;
+  const UpdateRepositoryImpl({required this.dataSource});
 
   @override
   Future<Either<NetworkException, String>> getAvailableVersion() async =>
-      updateRemoteDataSource.getAvailableVersion();
+      dataSource.getAvailableVersion();
 
   @override
   Future<Either<NetworkException, String>> getUpdateDownloadAddress() =>
-      updateRemoteDataSource.getDownloadAddress();
+      dataSource.getDownloadAddress();
 
   @override
   Future<Either<NetworkException, File?>> updateDownload() async =>
-      updateRemoteDataSource.updateDownload();
+      dataSource.updateDownload();
 }

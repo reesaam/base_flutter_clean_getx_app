@@ -11,7 +11,6 @@ import '../../../../core/app_localization.dart';
 import '../../../../core/core_dialogs.dart';
 import '../../../../features/update/domain/use_cases/update_download_address_usecase.dart';
 import '../../../../features/update/domain/use_cases/update_download_usecase.dart';
-import '../../data/repositories/update_repository.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_info.dart';
@@ -22,6 +21,9 @@ import '../../../../app/components/general_widgets/app_snack_bars.dart';
 import '../../../../app/components/dialogs/app_alert_dialogs.dart';
 
 class UpdateController extends CoreController {
+  final UpdateDownloadAddressUseCase _updateDownloadAddressUseCase = UpdateDownloadAddressUseCase(updateRepository: Get.find());
+  final UpdateDownloadUseCase _updateDownloadUseCase = UpdateDownloadUseCase(updateRepository: Get.find());
+
   Rx<String> availableVersion = Texts.to.notAvailable.obs;
 
   File? dlFile;
@@ -58,7 +60,7 @@ class UpdateController extends CoreController {
 
   _checkUpdateFunction() async {
     String version = await checkAvailableVersion();
-    if (version == AppInfo.appCurrentVersion) {
+    if (version == AppInfo.appCurrentVersion.version) {
       appLogPrint('No New Version Available');
       AppSnackBar().showSnackBar(message: Texts.to.updateNoUpdateFound);
     } else {
@@ -84,11 +86,11 @@ class UpdateController extends CoreController {
       dlFile!.existsSync() ? dlFile!.deleteSync() : null;
       downloaded.value = false;
       String downloadAddress = '';
-      final resultAddress = await UpdateDownloadAddressUseCase(updateRepository: UpdateRepository.to).call();
+      final resultAddress = await _updateDownloadAddressUseCase.call();
       resultAddress.fold((l) => showErrorDialog(message: l.message), (r) => downloadAddress = r);
 
       if (downloadAddress.isNotEmpty) {
-        final result = await UpdateDownloadUseCase(updateRepository: UpdateRepository.to).call();
+        final result = await _updateDownloadUseCase.call();
         result.fold((l) => showErrorDialog(message: l.message), (r) {
           dlFile = r;
           downloaded.value = true;

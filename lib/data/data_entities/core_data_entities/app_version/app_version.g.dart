@@ -11,15 +11,22 @@ _$AppVersionImpl _$$AppVersionImplFromJson(Map<String, dynamic> json) =>
       version: json['version'] as String,
       changes:
           (json['changes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      released: json['released'] as bool?,
+      versionType:
+          $enumDecodeNullable(_$AppVersionTypesEnumMap, json['versionType']),
     );
 
 Map<String, dynamic> _$$AppVersionImplToJson(_$AppVersionImpl instance) =>
     <String, dynamic>{
       'version': instance.version,
       'changes': instance.changes,
-      'released': instance.released,
+      'versionType': _$AppVersionTypesEnumMap[instance.versionType],
     };
+
+const _$AppVersionTypesEnumMap = {
+  AppVersionTypes.release: 'release',
+  AppVersionTypes.beta: 'beta',
+  AppVersionTypes.hidden: 'hidden',
+};
 
 _$AppVersionsListImpl _$$AppVersionsListImplFromJson(
         Map<String, dynamic> json) =>
