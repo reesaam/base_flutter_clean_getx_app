@@ -9,12 +9,12 @@ import '../../data/repositories/update_repository.dart';
 
 @injectable
 class UpdateDownloadUseCase
-    implements UseCaseNoParams<NetworkException, File?> {
+    implements UseCaseWithParams<NetworkException, File?, String> {
   final UpdateRepository updateRepository;
 
   UpdateDownloadUseCase({required this.updateRepository});
 
   @override
-  Future<Either<NetworkException, File?>> call() async =>
-      await updateRepository.updateDownload();
+  Future<Either<NetworkException, File?>> call(savePath) async =>
+      await updateRepository.updateDownload(savePath: savePath);
 }

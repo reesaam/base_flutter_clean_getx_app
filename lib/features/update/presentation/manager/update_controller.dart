@@ -55,7 +55,8 @@ class UpdateController extends CoreController {
     AppBottomDialogs().withoutButton(title: Texts.to.updateCheckingUpdate, form: AppProgressIndicator.linear());
     bool internetStatus = await ConnectionChecker.to.checkInternet();
     popPage();
-    internetStatus ? _checkUpdateFunction() : noInternetConnectionSnackBar();
+    // internetStatus ? _checkUpdateFunction() : noInternetConnectionSnackBar();
+    _checkUpdateFunction();
   }
 
   _checkUpdateFunction() async {
@@ -90,7 +91,7 @@ class UpdateController extends CoreController {
       resultAddress.fold((l) => showErrorDialog(message: l.message), (r) => downloadAddress = r);
 
       if (downloadAddress.isNotEmpty) {
-        final result = await _updateDownloadUseCase.call();
+        final result = await _updateDownloadUseCase.call(dlFile!.path);
         result.fold((l) => showErrorDialog(message: l.message), (r) {
           dlFile = r;
           downloaded.value = true;
