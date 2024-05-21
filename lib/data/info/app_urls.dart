@@ -3,8 +3,7 @@ import 'app_info.dart';
 
 class AppURLs {
   //Main
-  // static String get apiBaseUrl => AppInfo.baseUrl;
-  static String get apiBaseUrl => 'pariaapp.resam-t.ir';
+  static String get apiBaseUrl => 'flutterbaseprojectgetx.resam-t.ir';
   static String get apiRetoolBaseUrl => 'resam.retool.com';
   static String get apiVersion => APIVersions.v1.getValue;
   static String get apiUrl => 'https://$apiBaseUrl/$apiVersion';

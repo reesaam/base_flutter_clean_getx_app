@@ -55,8 +55,7 @@ class UpdateController extends CoreController {
     AppBottomDialogs().withoutButton(title: Texts.to.updateCheckingUpdate, form: AppProgressIndicator.linear());
     bool internetStatus = await ConnectionChecker.to.checkInternet();
     popPage();
-    // internetStatus ? _checkUpdateFunction() : noInternetConnectionSnackBar();
-    _checkUpdateFunction();
+    internetStatus ? _checkUpdateFunction() : noInternetConnectionSnackBar();
   }
 
   _checkUpdateFunction() async {
