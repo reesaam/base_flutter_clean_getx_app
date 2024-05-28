@@ -2,13 +2,14 @@
 
 A Flutter Base Project using:
  - Clean Architecture
- - GetX State Manager
- - freezed
+ - GetX State Manager (also BloC for some features or Special Usages)
+ - Freezed, Dartz
  - Dependency Injection
- - Dio
+ - Dio, Retrofit, Interceptor
  - Intl App Localization
  - Shared Preferences
- - Get Storage
+ - Get Storage, Shared Preferences, Mongo DB
+ - Animations and UI Elements
 
 ## Getting Started
 
@@ -33,6 +34,17 @@ dart pub run build_runner build --delete-conflicting-outputs
 .\builder
 ```
 
+## Outputs
+- for android apk:
+```
+flutter build apk --debug/--release/--profile --no-tree-shake-icons
+```
+
+- for iOS (ipa):
+```
+flutter build ipa
+```
+
 - for web output:
 ```
 flutter build web --web-renderer canvaskit --release
@@ -42,9 +54,13 @@ flutter build web --web-renderer canvaskit --release
 ```
 - ...
 
+## Test
+```
+flutter test
+```
 
 ## Others
-### Launcher Icon
+### Icons
 - For any possible change in Launcher Icon
 - first change the file in assets : <<assets/logos/app_logo.png>> (Please replace the file)
 - then run:
@@ -52,13 +68,42 @@ flutter build web --web-renderer canvaskit --release
 dart run flutter_launcher_icons -f flutter_launcher_icons.yaml
 ```
 
-# How to start
+# How to Manage
 
 ### lib/admin
 Everything that you need for Administration that mostly would be separated from the App, 
 
 ### lib/app
-
+- Main Widgets and Components (Buttons, Dialogs, Indicators, AppBar, Drawer, ...)
+- 
 ### lib/core
+- All Bindings, Routing, Core Elements, Extensions, ...
+- Core Functions (Data Manipulations Functions, AppExit, Connection Checker, ...) that you may need all over the App
+- Core Widgets that you can use globally all over the App
+- All Extensions and Data Manipulation Functions
+- Network Functions
 
 ### lib/data
+- App Info and Data
+- All Data and Resources you need
+- Global Entities and Models
+- Storage and Data Functions and Implementation
+
+### Package Manipulation
+with Rename:
+```
+dart global activate rename
+```
+```
+rename getAppName --targets ios,android,macos,windows,linux
+```
+```
+rename setAppName --targets ios,android --value "AppName"
+```
+```
+rename setBundleId --targets android --value "com.resam.bundleId
+```
+with Change Package Name:
+```
+flutter pub run change_app_package_name:main com.new.package.name
+```
