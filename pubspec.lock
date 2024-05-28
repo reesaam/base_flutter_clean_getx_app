@@ -193,6 +193,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.2+4"
+  change_app_package_name:
+    dependency: "direct main"
+    description:
+      name: change_app_package_name
+      sha256: f9ebaf68a4b5a68c581492579bb68273c523ef325fbf9ce2f1b57fb136ad023b
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   characters:
     dependency: transitive
     description:
@@ -1029,6 +1037,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  rename:
+    dependency: "direct main"
+    description:
+      name: rename
+      sha256: "6ef5daf4b11130e71d93630cfb70725e5a35b19039739cfcd2b272c834ba25fe"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
   responsive_framework:
     dependency: "direct dev"
     description:

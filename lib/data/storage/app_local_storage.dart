@@ -3,15 +3,15 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/app_extensions/data_models_extensions/extension_settings_model.dart';
+import '../../../../features/versions/domain/entities/app_version_entity/app_version_mapper.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../app/functional_components/file_functions/file_functions.dart';
 import '../../core/app_localization.dart';
 import '../../core/core_functions.dart';
 import '../../features/settings/data/models/app_settings_data_model/app_setting_data_model.dart';
-import '../data_entities/core_data_entities/app_data/data/models/app_data_model/app_data_model.dart';
-import '../data_entities/core_data_entities/app_version/app_version.dart';
+import '../../features/versions/data/remote/models/app_version_model/app_version_model.dart';
+import '../data_models/app_data_model/app_data_model.dart';
 import '../resources/app_enums.dart';
 import '../resources/app_texts.dart';
 import 'app_shared_preferences.dart';
@@ -50,7 +50,7 @@ class AppLocalStorage {
   Future<void> saveAllDataToStorage() async {
     //Load data
     AppDataVersions? appDataVersion = loadAppDataVersion();
-    AppVersion? appVersion = loadAppVersion();
+    AppVersionModel? appVersion = loadAppVersion();
     AppSettingDataModel? settings = loadSettings();
 
     //Fill Data
@@ -80,7 +80,7 @@ class AppLocalStorage {
   Future<void> exportData() async {
     AppDataModel appData = AppDataModel(
       version: AppDataVersions.values.last,
-      appVersion: AppInfo.appCurrentVersion,
+      appVersion: AppInfo.appCurrentVersion.mapper,
       settings: loadSettings(),
     );
 
@@ -131,11 +131,11 @@ class AppLocalStorage {
   clearAppDataVersion() => _clearSpecificKey(AppStorageKeys.keyAppDataVersion);
 
   ///AppVersion
-  Future<void> saveAppVersion({required AppVersion? appVersion}) async => await _saveFunction(key: _keyAppVersion, data: appVersion);
+  Future<void> saveAppVersion({required AppVersionModel? appVersion}) async => await _saveFunction(key: _keyAppVersion, data: appVersion);
 
-  AppVersion? loadAppVersion() {
+  AppVersionModel? loadAppVersion() {
     var data = _loadFunction(_keyAppVersion);
-    return data == null ? null : AppVersion.fromJson(data);
+    return data == null ? null : AppVersionModel.fromJson(data);
   }
 
   clearAppVersion() => _clearSpecificKey(AppStorageKeys.keyAppVersion);

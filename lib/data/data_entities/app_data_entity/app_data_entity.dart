@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
-import '../../../../../../resources/app_enums.dart';
-import '../../../../app_version/app_version.dart';
+import '../../../../../../../features/versions/domain/entities/app_version_entity/app_version_entity.dart';
+import '../../resources/app_enums.dart';
 
 part 'app_data_entity.freezed.dart';
 part 'app_data_entity.g.dart';
@@ -11,7 +11,7 @@ part 'app_data_entity.g.dart';
 class AppDataEntity with _$AppDataEntity {
   const factory AppDataEntity({
     final AppDataVersions? version,
-    final AppVersion? appVersion,
+    final AppVersionEntity? appVersion,
     final AppSettingDataEntity? appSettings,
   }) = _AppDataEntity;
 

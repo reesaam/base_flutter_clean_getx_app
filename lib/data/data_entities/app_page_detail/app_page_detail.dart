@@ -3,7 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../resources/app_enums.dart';
+import '../../resources/app_enums.dart';
+
 
 part 'app_page_detail.freezed.dart';
 part 'app_page_detail.g.dart';

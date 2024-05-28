@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
+import '../../../data/data_entities/app_page_detail/app_page_detail.dart';
 import '../../../data/resources/app_colors.dart';
 import '../../../data/resources/app_paddings.dart';
 import '../../../data/resources/app_text_styles.dart';

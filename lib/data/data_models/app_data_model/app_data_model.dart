@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../../../features/settings/data/models/app_settings_data_model/app_setting_data_model.dart';
-import '../../../../../../resources/app_enums.dart';
-import '../../../../app_version/app_version.dart';
+import '../../../../../../../features/versions/data/remote/models/app_version_model/app_version_model.dart';
+import '../../resources/app_enums.dart';
 
 part 'app_data_model.freezed.dart';
 part 'app_data_model.g.dart';
@@ -11,7 +11,7 @@ part 'app_data_model.g.dart';
 class AppDataModel with _$AppDataModel {
   const factory AppDataModel({
     final AppDataVersions? version,
-    final AppVersion? appVersion,
+    final AppVersionModel? appVersion,
     final AppSettingDataModel? settings,
   }) = _AppDataModel;
 

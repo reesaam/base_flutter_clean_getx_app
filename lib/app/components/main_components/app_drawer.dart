@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
+import '../../../core/app_extensions/data_types_extensions/extension_int.dart';
 import '../../../core/app_localization.dart';
 import '../../../core/app_routing/routing.dart';
 import '../../../core/core_functions.dart';
-import '../../../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
+import '../../../data/data_entities/app_page_detail/app_page_detail.dart';
 import '../../../data/info/app_info.dart';
 import '../../../data/info/app_page_details.dart';
 import '../../../data/resources/app_icons.dart';

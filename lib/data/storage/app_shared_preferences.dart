@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../data_entities/core_data_entities/app_data/data/models/app_data_model/app_data_model.dart';
+import '../data_models/app_data_model/app_data_model.dart';
 import '../resources/app_enums.dart';
 
 class AppSharedPreferences {

@@ -8,7 +8,8 @@ import '../app/components/dialogs/app_alert_dialogs.dart';
 import '../app/components/general_widgets/app_snack_bars.dart';
 import '../data/info/app_info.dart';
 import '../data/storage/app_local_storage.dart';
-import '../features/update/domain/use_cases/update_version_usecase.dart';
+import '../features/versions/domain/entities/app_version_entity/app_version_entity.dart';
+import '../features/versions/domain/use_cases/get_versions_usecase.dart';
 import 'app_localization.dart';
 
 void appDebugPrint(message) => AppInfo.isRelease ? null : debugPrint('$message');
@@ -25,9 +26,10 @@ void loadAppData() => AppLocalStorage.to.loadAllDataFromStorage();
 void clearAppData() => AppLocalStorage.to.clearStorage();
 
 Future<String> checkAvailableVersion() async {
-  final UpdateVersionUseCase updateVersionUseCase = UpdateVersionUseCase(updateRepository: Get.find());
-  var result = await updateVersionUseCase.call();
-  return result.fold((l) => Texts.to.notAvailable, (r) => r);
+  final GetVersionsUseCase getVersionsUseCase = GetVersionsUseCase(versionsRepository: Get.find());
+  var response = await getVersionsUseCase.call();
+  AppVersionEntity? remoteLastVersion = response.fold((l) => null, (r) => r.versionsList.last);
+  return AppInfo.appCurrentVersion == remoteLastVersion || remoteLastVersion == null ? Texts.to.notAvailable : remoteLastVersion.version;
 }
 
 noInternetConnectionSnackBar() => AppSnackBar().showSnackBar(message: Texts.to.connectionInternetNotAvailableText);
