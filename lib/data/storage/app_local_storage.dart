@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
-import '../../../../features/versions/domain/entities/app_version_entity/app_version_mapper.dart';
-import '../../../../data/info/app_info.dart';
-import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
+import '../../features/versions/domain/entities/app_version_entity/app_version_mapper.dart';
+import '../../data/info/app_info.dart';
+import '../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../app/functional_components/file_functions/file_functions.dart';
 import '../../core/app_localization.dart';
 import '../../core/core_functions.dart';
