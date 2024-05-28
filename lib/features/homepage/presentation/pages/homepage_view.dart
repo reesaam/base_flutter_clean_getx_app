@@ -13,7 +13,7 @@ import '../../../../app/components/main_components/app_drawer.dart';
 import '../manager/homepage_controller.dart';
 
 class HomePage extends CoreView<HomePageController> {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   PreferredSizeWidget? get appBar =>

@@ -6,7 +6,7 @@ import '../manager/about_controller.dart';
 import '../widgets/about_items_widgets.dart';
 
 class AboutPage extends CoreView<AboutController> {
-  const AboutPage({Key? key}) : super(key: key);
+  const AboutPage({super.key});
 
   @override
   PreferredSizeWidget? get appBar =>
