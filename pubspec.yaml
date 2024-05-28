@@ -28,10 +28,14 @@ dependencies:
   dartz: ^0.10.1
   json_annotation: ^4.8.1
 
-  #File
-  open_file_plus: ^3.4.1+1
-  flutter_file_dialog: ^3.0.2
-  path_provider: ^2.1.2
+  #DataBase
+  #mongo_dart: ^0.9.4
+  #realm: ^2.1.0
+  #flutter_mongodb_realm: ^2.3.0
+
+  #Storage
+  shared_preferences: ^2.2.2
+  get_storage: ^2.1.1
 
   #Device Related and Resources
   permission_handler: ^10.4.5
@@ -56,14 +60,15 @@ dependencies:
   #retrofit_flutter: ^1.1.1
   chopper: ^7.4.0
 
-  #Storage
-  shared_preferences: ^2.2.2
-  get_storage: ^2.1.1
+  #File
+  open_file_plus: ^3.4.1+1
+  flutter_file_dialog: ^3.0.2
+  path_provider: ^2.1.2
 
-  #DataBase
-  #mongo_dart: ^0.9.4
-  #realm: ^2.1.0
-  #flutter_mongodb_realm: ^2.3.0
+  #MultiMedia
+  #just_audio: ^0.9.38
+  #assets_audio_player: ^3.1.1
+  #beep_player: ^0.0.1
 
   #UI
   flutter_animate: ^4.5.0
@@ -90,6 +95,10 @@ dependencies:
   #Lints
   lint: ^2.3.0
   lints: ^3.0.0
+
+  #Other
+  rename: ^3.0.2
+  change_app_package_name: ^1.1.0
 
   cupertino_icons: ^1.0.6
 
