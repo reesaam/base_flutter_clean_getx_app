@@ -700,10 +700,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `App Name`
   String get aboutTitlesAppName {
     return Intl.message(
-      '',
+      'App Name',
       name: 'aboutTitlesAppName',
       desc: '',
       args: [],
