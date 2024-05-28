@@ -22,11 +22,24 @@ class SplashScreenPage extends CoreView<SplashScreenController> {
         _widgetVersion(),
       ]));
 
-  Widget _widgetLogo() => Container(alignment: Alignment.topCenter, child: Image.asset(controller.logoSource));
+  Widget _widgetLogo() => Container(
+        alignment: Alignment.topCenter,
+        child: Image.asset(controller.logoSource),
+      );
 
-  Widget _widgetAppName() => Container(alignment: Alignment.center, child: Text(controller.appName, style: AppTextStyles.splashScreenAppName));
+  Widget _widgetAppName() => Container(
+        alignment: Alignment.center,
+        child: Text(controller.appName, style: AppTextStyles.splashScreenAppName),
+      );
 
-  Widget _widgetLoadingIndicator() => Container(alignment: Alignment.center, padding: AppPaddings.splashScreenProgressIndicator, child: AppProgressIndicator.circular());
+  Widget _widgetLoadingIndicator() => Container(
+        alignment: Alignment.center,
+        padding: AppPaddings.splashScreenProgressIndicator,
+        child: AppProgressIndicator.circular(),
+      );
 
-  Widget _widgetVersion() => Container(alignment: Alignment.bottomCenter, child: Text(controller.appVersion));
+  Widget _widgetVersion() => Container(
+        alignment: Alignment.bottomCenter,
+        child: Text(controller.appVersion),
+      );
 }

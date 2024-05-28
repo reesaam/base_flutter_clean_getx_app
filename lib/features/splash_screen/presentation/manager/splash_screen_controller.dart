@@ -31,21 +31,24 @@ class SplashScreenController extends CoreController {
   void pageInit() {
     pageDetail = AppPageDetails.splashScreen;
     logoSource = AppLogos.appLogo;
-    appName = AppInfo.appName;
+    appName = AppInfo.appNameInitials;
     appVersion = '${Texts.to.version}: ${AppInfo.appCurrentVersion.version}';
   }
 
   @override
-  void onReadyFunction() async {
-    goToNextPage();
-  }
+  void onReadyFunction() => goToNextPage();
 
   void goToNextPage() async {
     await Future.delayed(const Duration(seconds: 4));
     availableUpdate == AppInfo.appCurrentVersion.version ? goToHomePage() : _showUpdateDialog();
   }
 
-  _showUpdateDialog() => AppAlertDialogs().withYesNo(title: Texts.to.updateNewVersion, text: Texts.to.updateApprove, onTapNo: goToHomePage, onTapYes: _goToUpdate);
+  _showUpdateDialog() => AppAlertDialogs().withYesNo(
+        title: Texts.to.updateNewVersion,
+        text: Texts.to.updateApprove,
+        onTapNo: goToHomePage,
+        onTapYes: _goToUpdate,
+      );
 
   _goToUpdate() {
     goToHomePage();
