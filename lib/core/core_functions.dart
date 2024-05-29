@@ -25,11 +25,25 @@ void loadAppData() => AppLocalStorage.to.loadAllDataFromStorage();
 
 void clearAppData() => AppLocalStorage.to.clearStorage();
 
-Future<String> checkAvailableVersion() async {
+Future<AppVersionEntitiesList?> getVersions() async {
   final GetVersionsUseCase getVersionsUseCase = GetVersionsUseCase(versionsRepository: Get.find());
   var response = await getVersionsUseCase.call();
-  AppVersionEntity? remoteLastVersion = response.fold((l) => null, (r) => r.versionsList.last);
-  return AppInfo.appCurrentVersion == remoteLastVersion || remoteLastVersion == null ? Texts.to.notAvailable : remoteLastVersion.version;
+  return response.fold((l) => null, (r) => r);
+}
+
+Future<String> checkAvailableVersion() async {
+  String version = Texts.to.notAvailable;
+  var response = await getVersions();
+  if (response != null && response.versionsList.isNotEmpty) {
+    version = response.versionsList.last.version;
+  }
+  return version;
+}
+
+Future<AppVersionEntity> getCurrentVersion() async {
+  AppVersionEntity version = AppVersionEntity.createEmpty();
+  var response = await getVersions();
+  return version;
 }
 
 noInternetConnectionSnackBar() => AppSnackBar().showSnackBar(message: Texts.to.connectionInternetNotAvailableText);

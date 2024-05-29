@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base_clean_getx_app/core/core_widgets.dart';
 import 'package:get/get.dart';
 
 import '../../../../app/components/general_widgets/app_progress_indicator.dart';
@@ -15,16 +17,17 @@ class SplashScreenPage extends CoreView<SplashScreenController> {
       alignment: Alignment.center,
       width: Get.width,
       height: Get.height - 100,
-      child: Stack(children: [
-        _widgetLogo(),
-        _widgetAppName(),
-        _widgetLoadingIndicator(),
-        _widgetVersion(),
+      child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Expanded(flex: 4, child: shrinkSizedBox),
+        Expanded(flex: 4, child: _widgetLogo()),
+        Expanded(flex: 8, child: _widgetAppName()),
+        Expanded(flex: 6, child: _widgetLoadingIndicator()),
+        Expanded(flex: 4, child: _widgetVersion()),
       ]));
 
   Widget _widgetLogo() => Container(
-        alignment: Alignment.topCenter,
-        child: Image.asset(controller.logoSource),
+        alignment: Alignment.center,
+        child: Image.asset(controller.logoSource, fit: BoxFit.fitHeight),
       );
 
   Widget _widgetAppName() => Container(
@@ -34,7 +37,6 @@ class SplashScreenPage extends CoreView<SplashScreenController> {
 
   Widget _widgetLoadingIndicator() => Container(
         alignment: Alignment.center,
-        padding: AppPaddings.splashScreenProgressIndicator,
         child: AppProgressIndicator.circular(),
       );
 

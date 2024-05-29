@@ -13,6 +13,11 @@ class AppSettingDataEntity with _$AppSettingDataEntity {
   }) = _AppSettingDataEntity;
 
   factory AppSettingDataEntity.fromJson(Map<String, dynamic> json) => _$AppSettingDataEntityFromJson(json);
+
+  factory AppSettingDataEntity.createEmpty() => const AppSettingDataEntity(
+        language: AppLanguages.english,
+        darkMode: false,
+      );
 }
 
 @unfreezed

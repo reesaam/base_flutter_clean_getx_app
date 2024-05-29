@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_models_extensions/extension_settings.dart';
 import '../../../../app/components/dialogs/app_bottom_dialogs.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
@@ -8,7 +9,6 @@ import '../../../../core/app_routing/routing.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/storage/app_local_storage.dart';
-import '../../../../core/app_extensions/data_models_extensions/extension_settings_entity.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';

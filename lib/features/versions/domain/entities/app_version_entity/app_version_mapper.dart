@@ -1,4 +1,4 @@
-import '../../../data/remote/models/app_version_model/app_version_model.dart';
+import '../../../data/models/app_version_model/app_version_model.dart';
 import 'app_version_entity.dart';
 
 extension OnAppVersionEntity on AppVersionEntity {

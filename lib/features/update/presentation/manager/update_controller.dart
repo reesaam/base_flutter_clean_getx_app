@@ -87,11 +87,11 @@ class UpdateController extends CoreController {
       downloaded.value = false;
       String downloadAddress = '';
       final resultAddress = await _updateDownloadAddressUseCase.call();
-      resultAddress.fold((l) => showErrorDialog(message: l.message), (r) => downloadAddress = r);
+      resultAddress.fold((l) => showErrorDialog(message: l.toString()), (r) => downloadAddress = r);
 
       if (downloadAddress.isNotEmpty) {
         final result = await _updateDownloadUseCase.call(dlFile!.path);
-        result.fold((l) => showErrorDialog(message: l.message), (r) {
+        result.fold((l) => showErrorDialog(message: l.toString()), (r) {
           dlFile = r;
           downloaded.value = true;
           appDebugPrint(dlFile?.length());

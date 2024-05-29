@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base_clean_getx_app/core/app_extensions/data_models_extensions/extension_settings.dart';
+import 'package:flutter_base_clean_getx_app/features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
@@ -27,14 +29,14 @@ class AppLocalization {
 
   TextDirection defaultTextDirection = TextDirection.ltr;
 
-  Locale? getDefaultLocale() {
-    var appSettings = AppLocalStorage.to.loadSettings();
-    return appSettings?.language.getLocale ?? defaultLanguage;
+  Locale getDefaultLocale() {
+    var appSettings = const AppSettingDataEntity().loadFromStorage;
+    return appSettings.language.getLocale;
   }
 
-  TextDirection? getTextDirection() {
-    var appSettings =  AppLocalStorage.to.loadSettings();
-    return appSettings?.language.getLocale == persian
+  TextDirection getTextDirection() {
+    var appSettings =  const AppSettingDataEntity().loadFromStorage;
+    return appSettings.language.getLocale == persian
         ? TextDirection.rtl
         : defaultTextDirection;
   }

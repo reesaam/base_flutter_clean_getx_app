@@ -13,6 +13,11 @@ class AppSettingDataModel with _$AppSettingDataModel {
   }) = _AppSettingDataModel;
 
   factory AppSettingDataModel.fromJson(Map<String, dynamic> json) => _$AppSettingDataModelFromJson(json);
+
+  factory AppSettingDataModel.createEmpty() => const AppSettingDataModel(
+        language: AppLanguages.english,
+        darkMode: false,
+      );
 }
 
 @unfreezed

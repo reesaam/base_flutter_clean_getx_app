@@ -20,11 +20,12 @@ class SplashScreenController extends CoreController {
 
   @override
   void dataInit() async {
-    permissionsStatus = await AppPermissions.to.checkAllPermissions();
-    appDebugPrint('Permission Status: $permissionsStatus}');
-    internetStatus = await ConnectionChecker.to.checkInternet();
-    internetStatus ? availableUpdate = await checkAvailableVersion() : noInternetConnectionSnackBar();
-    appDebugPrint('Available Update: $availableUpdate');
+    // permissionsStatus = await AppPermissions.to.checkAllPermissions();
+    // appDebugPrint('Permission Status: $permissionsStatus}');
+    // internetStatus = await ConnectionChecker.to.checkInternet();
+    // internetStatus ? availableUpdate = await checkAvailableVersion() : noInternetConnectionSnackBar();
+    // appDebugPrint('Available Update: $availableUpdate');
+    // availableUpdate = await checkAvailableVersion();
   }
 
   @override
@@ -36,7 +37,9 @@ class SplashScreenController extends CoreController {
   }
 
   @override
-  void onReadyFunction() => goToNextPage();
+  void onReadyFunction() {
+    goToNextPage();
+  }
 
   void goToNextPage() async {
     await Future.delayed(const Duration(seconds: 4));

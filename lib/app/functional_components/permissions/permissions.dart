@@ -66,7 +66,7 @@ class AppPermissions {
   Future<String> _checkPermissionsList(List<Permission> permissions) async {
     String permissionMessage = PermissionStatus.granted.name.toLowerCase();
     for (var permission in permissions) {
-      await permission.request() == PermissionStatus.granted ? null : permissionMessage = permission.toString().toLowerCase().replaceAll(".", "");
+      await permission.request() == PermissionStatus.granted ? null : permissionMessage = permission.toString().toLowerCase().split('.').lastOrNull.toString();
     }
     return permissionMessage;
   }

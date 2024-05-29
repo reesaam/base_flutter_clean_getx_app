@@ -20,6 +20,7 @@ enum APIVersions {
 }
 
 enum APISections {
+  versions,
   update;
 
   String get getValue => name;
@@ -58,6 +59,6 @@ enum AppLanguages {
 enum AppStorageKeys {
   keyAppData,
   keyAppDataVersion,
-  keyAppVersion,
+  keyAppVersions,
   keySettings,
 }

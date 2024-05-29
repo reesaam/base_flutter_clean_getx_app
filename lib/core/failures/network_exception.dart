@@ -4,7 +4,6 @@ import 'package:dio/dio.dart' as dio;
 @injectable
 class NetworkException implements Exception {
   final String message;
-
   NetworkException({required this.message});
 
   static NetworkException handleResponse(dio.Response? response) {
@@ -133,205 +132,205 @@ class NetworkException implements Exception {
 }
 
 class ParsingDataException extends NetworkException {
-  ParsingDataException() : super(message: 'parsingDataError');
+  ParsingDataException() : super(message: 'Parsing Data Exception');
 }
 
 // 203
 class NonAuthoritativeInformationException extends NetworkException {
-  NonAuthoritativeInformationException() : super(message: 'generalError');
+  NonAuthoritativeInformationException() : super(message: 'NonAuthoritative Information Exception');
 }
 
 // 204
 class NoContentException extends NetworkException {
-  NoContentException() : super(message: 'generalError');
+  NoContentException() : super(message: 'No Content Exception');
 }
 
 // 304
 class NotModifiedException extends NetworkException {
-  NotModifiedException() : super(message: 'generalError');
+  NotModifiedException() : super(message: 'Not Modified Exception');
 }
 
 // 400
 class BadRequestException extends NetworkException {
-  BadRequestException() : super(message: 'badRequestError');
+  BadRequestException() : super(message: 'Bad Request Exception');
 }
 
 // 401
 /// to call refresh_token
 class UnauthorizedException extends NetworkException {
-  UnauthorizedException() : super(message: 'forbiddenError');
+  UnauthorizedException() : super(message: 'Unauthorized Exception');
 }
 
 // 402
 class PaymentRequiredException extends NetworkException {
-  PaymentRequiredException() : super(message: 'generalError');
+  PaymentRequiredException() : super(message: 'Payment Required Exception');
 }
 
 // 403
 class ForbiddenException extends NetworkException {
-  ForbiddenException() : super(message: 'forbiddenError');
+  ForbiddenException() : super(message: 'Forbidden Exception');
 }
 
 // 404
 class NotFoundException extends NetworkException {
-  NotFoundException() : super(message: 'notFoundExceptionError');
+  NotFoundException() : super(message: 'Not Found Exception');
 }
 
 // 405
 class MethodNotAllowedException extends NetworkException {
-  MethodNotAllowedException() : super(message: 'generalError');
+  MethodNotAllowedException() : super(message: 'Method Not Allowed Exception');
 }
 
 // 406
 class NotAcceptableException extends NetworkException {
-  NotAcceptableException() : super(message: 'generalError');
+  NotAcceptableException() : super(message: 'Not Acceptable Exception');
 }
 
 // 407
 class ProxyAuthRequiredException extends NetworkException {
-  ProxyAuthRequiredException() : super(message: 'generalError');
+  ProxyAuthRequiredException() : super(message: 'Proxy Auth Required Exception');
 }
 
 // 408
 class RequestTimeoutException extends NetworkException {
-  RequestTimeoutException() : super(message: 'timeoutError');
+  RequestTimeoutException() : super(message: 'Request Timeout Exception');
 }
 
 // 409
 class ConflictException extends NetworkException {
-  ConflictException() : super(message: 'generalError');
+  ConflictException() : super(message: 'Conflict Exception');
 }
 
 // 411
 class LengthRequiredException extends NetworkException {
-  LengthRequiredException() : super(message: 'generalError');
+  LengthRequiredException() : super(message: 'Length Required Exception');
 }
 
 // 412
 class PreConditionFailedException extends NetworkException {
-  PreConditionFailedException() : super(message: 'generalError');
+  PreConditionFailedException() : super(message: 'PreCondition Failed Exception');
 }
 
 // 413
 class RequestEntityTooLargeException extends NetworkException {
-  RequestEntityTooLargeException() : super(message: 'generalError');
+  RequestEntityTooLargeException() : super(message: 'Request Entity Too Large Exception');
 }
 
 // 414
 class RequestUriTooLongException extends NetworkException {
-  RequestUriTooLongException() : super(message: 'generalError');
+  RequestUriTooLongException() : super(message: 'Request Uri Too Long Exception');
 }
 
 // 415
 class UnsupportedMediaTypeException extends NetworkException {
-  UnsupportedMediaTypeException() : super(message: 'generalError');
+  UnsupportedMediaTypeException() : super(message: 'Unsupported Media Type Exception');
 }
 
 // 416
 class RequestedRangeNotSatisfiableException extends NetworkException {
-  RequestedRangeNotSatisfiableException() : super(message: 'generalError');
+  RequestedRangeNotSatisfiableException() : super(message: 'Requested Range Not Satisfiable Exception');
 }
 
 // 417
 class ExpectationFailedException extends NetworkException {
-  ExpectationFailedException() : super(message: 'generalError');
+  ExpectationFailedException() : super(message: 'Expectation FailedException');
 }
 
 // 422
 class UnProcessableEntityException extends NetworkException {
-  UnProcessableEntityException() : super(message: 'generalError');
+  UnProcessableEntityException() : super(message: 'UnProcessable Entity Exception');
 }
 
 // 424
 class FailedDependencyException extends NetworkException {
-  FailedDependencyException() : super(message: 'generalError');
+  FailedDependencyException() : super(message: 'Failed Dependency Exception');
 }
 
 // 425
 class UnorderedCollectionException extends NetworkException {
-  UnorderedCollectionException() : super(message: 'generalError');
+  UnorderedCollectionException() : super(message: 'Unordered Collection Exception');
 }
 
 // 426
 class UpgradeRequiredException extends NetworkException {
-  UpgradeRequiredException() : super(message: 'generalError');
+  UpgradeRequiredException() : super(message: 'Upgrade Required Exception');
 }
 
 // 429
 class TooManyRequestException extends NetworkException {
-  TooManyRequestException() : super(message: 'tooManyRequestError');
+  TooManyRequestException() : super(message: 'Too Many Request Exception');
 }
 
 // 431
 class RequestHeaderFieldsTooLargeException extends NetworkException {
-  RequestHeaderFieldsTooLargeException() : super(message: 'generalError');
+  RequestHeaderFieldsTooLargeException() : super(message: 'Request Header Fields Too Large Exception');
 }
 
 // 444
 class NoResponseException extends NetworkException {
-  NoResponseException() : super(message: 'generalError');
+  NoResponseException() : super(message: 'No Response Exception');
 }
 
 // 451
 class UnavailableForLegalReasonsException extends NetworkException {
-  UnavailableForLegalReasonsException() : super(message: 'generalError');
+  UnavailableForLegalReasonsException() : super(message: 'Unavailable For Legal Reasons Exception');
 }
 
 // 494
 class RequestHeaderTooLargeException extends NetworkException {
-  RequestHeaderTooLargeException() : super(message: 'generalError');
+  RequestHeaderTooLargeException() : super(message: 'Request Header Too Large Exception');
 }
 
 // 500
 class InternalServerErrorException extends NetworkException {
-  InternalServerErrorException() : super(message: 'internalServerError');
+  InternalServerErrorException() : super(message: 'Internal Server Error Exception');
 }
 
 // 501
 class NotImplementedException extends NetworkException {
-  NotImplementedException() : super(message: 'generalError');
+  NotImplementedException() : super(message: 'Not Implemented Exception');
 }
 
 // 502
 class BadGatewayException extends NetworkException {
-  BadGatewayException() : super(message: 'generalError');
+  BadGatewayException() : super(message: 'Bad Gateway Exception');
 }
 
 // 503
 class ServiceUnavailableException extends NetworkException {
-  ServiceUnavailableException() : super(message: 'serviceUnavailableError');
+  ServiceUnavailableException() : super(message: 'Service Unavailable Exception');
 }
 
 // 504
 class GatewayTimeoutException extends NetworkException {
-  GatewayTimeoutException() : super(message: 'generalError');
+  GatewayTimeoutException() : super(message: 'Gateway Timeout Exception');
 }
 
 // 507
 class InsufficientStorageException extends NetworkException {
-  InsufficientStorageException() : super(message: 'generalError');
+  InsufficientStorageException() : super(message: 'Insufficient Storage Exception');
 }
 
 // 508
 class LoopDetectedException extends NetworkException {
-  LoopDetectedException() : super(message: 'generalError');
+  LoopDetectedException() : super(message: 'Loop Detected Exception');
 }
 
 // 509
 class BandwidthLimitException extends NetworkException {
-  BandwidthLimitException() : super(message: 'generalError');
+  BandwidthLimitException() : super(message: 'Bandwidth Limit Exception');
 }
 
 // 510
 class NotExtendedException extends NetworkException {
-  NotExtendedException() : super(message: 'generalError');
+  NotExtendedException() : super(message: 'Not Extended Exception');
 }
 
 // 511
 class NetworkAuthRequiredException extends NetworkException {
-  NetworkAuthRequiredException() : super(message: 'generalError');
+  NetworkAuthRequiredException() : super(message: 'Network AuthRequired Exception');
 }
 
 class UnknownException extends NetworkException {
-  UnknownException() : super(message: 'generalError');
+  UnknownException() : super(message: 'Unknown Network Error');
 }

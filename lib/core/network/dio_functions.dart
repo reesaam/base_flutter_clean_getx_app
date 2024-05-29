@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 
 import '../core_functions.dart';
 import 'dio.dart';
-import 'network_exception.dart';
+import '../failures/network_exception.dart';
 
 class DioFunctions {
   static Future<Either<NetworkException, T>> get<T>({required String url, request}) async {
