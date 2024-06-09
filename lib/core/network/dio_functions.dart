@@ -14,17 +14,17 @@ class DioFunctions {
     try {
       final Response result = await dio.get(url);
       if (result.statusCode == 200) {
-        appDebugPrint('Data body: ${result.data}');
-        appDebugPrint('Status Code: ${result.statusCode}');
+        _printResponse('GET', result);
         data = result.data;
         return Right(data);
       }
+      _printException('GET', ['Result Data: ${result.data}', 'Result Message: ${result.statusMessage}']);
       return Left(NetworkException.handleResponse(result));
     } on DioException catch (ex) {
-      appDebugPrint(ex);
+      _printException('GET', ['DioException Response: ${ex.response}', 'DioException Message: ${ex.message}']);
       return Left(NetworkException.handleResponse(ex.response));
     } catch (ex) {
-      appDebugPrint(ex);
+      _printException('GET', ['$ex']);
       return Left(NetworkException.parsingDataException());
     }
   }
@@ -35,17 +35,17 @@ class DioFunctions {
     try {
       final Response result = await dio.post(url);
       if (result.statusCode == 200) {
-        appDebugPrint('Data body: ${result.data}');
-        appDebugPrint('Status Code: ${result.statusCode}');
+        _printResponse('POST', result);
         data = result.data;
         return Right(data);
       }
+      _printException('POST', ['Result Data: ${result.data}', 'Result Message: ${result.statusMessage}']);
       return Left(NetworkException.handleResponse(result));
     } on DioException catch (ex) {
-      appDebugPrint(ex);
+      _printException('POST', ['DioException Response: ${ex.response}', 'DioException Message: ${ex.message}']);
       return Left(NetworkException.handleResponse(ex.response));
     } catch (ex) {
-      appDebugPrint(ex);
+      _printException('POST', ['$ex']);
       return Left(NetworkException.parsingDataException());
     }
   }
@@ -56,17 +56,17 @@ class DioFunctions {
     try {
       final Response result = await dio.put(url);
       if (result.statusCode == 200) {
-        appDebugPrint('Data body: ${result.data}');
-        appDebugPrint('Status Code: ${result.statusCode}');
+        _printResponse('PUT', result);
         data = result.data;
         return Right(data);
       }
+      _printException('PUT', ['Result Data: ${result.data}', 'Result Message: ${result.statusMessage}']);
       return Left(NetworkException.handleResponse(result));
     } on DioException catch (ex) {
-      appDebugPrint(ex);
+      _printException('PUT', ['DioException Response: ${ex.response}', 'DioException Message: ${ex.message}']);
       return Left(NetworkException.handleResponse(ex.response));
     } catch (ex) {
-      appDebugPrint(ex);
+      _printException('PUT', ['$ex']);
       return Left(NetworkException.parsingDataException());
     }
   }
@@ -78,21 +78,35 @@ class DioFunctions {
       final savePath = _getSavePath();
       final Response result = await dio.download(url, savePath);
       if (result.statusCode == 200) {
-        appDebugPrint('Data body: ${result.data}');
-        appDebugPrint('Status Code: ${result.statusCode}');
+        _printResponse('DOWNLOAD', result);
         data = result.data;
         return Right(data);
       }
+      _printException('DOWNLOAD', ['Result Data: ${result.data}', 'Result Message: ${result.statusMessage}']);
       return Left(NetworkException.handleResponse(result));
     } on DioException catch (ex) {
-      appDebugPrint(ex);
+      _printException('DOWNLOAD', ['DioException Response: ${ex.response}', 'DioException Message: ${ex.message}']);
       return Left(NetworkException.handleResponse(ex.response));
     } catch (ex) {
-      appDebugPrint(ex);
+      _printException('DOWNLOAD', ['$ex']);
       return Left(NetworkException.parsingDataException());
     }
   }
 
   ///TODO: Implementation
   static Future<String> _getSavePath() async => '';
+
+  static _printResponse(String method, Response response) {
+    appDebugPrint('==> $method Method Successful Response:');
+    appDebugPrint('Status Code: ${response.statusCode}');
+    appDebugPrint('Data Message: ${response.statusMessage}');
+    appDebugPrint('Data Body: ${response.data}');
+  }
+
+  static _printException(String method, List<String> prints) {
+    appDebugPrint('==> $method Method Exception:');
+    for(var print in prints) {
+      appDebugPrint(print);
+    }
+  }
 }

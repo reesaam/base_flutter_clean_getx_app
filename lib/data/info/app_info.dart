@@ -12,7 +12,7 @@ class AppInfo {
   static AppVersionEntitiesList get versions => AppVersionEntitiesList().loadFromStorage;
   static int get appVersionsCounter => versions.versionsList.length;
 
-  static String get baseUrl => 'www.resam-t.ir';
+  static String get baseUrl => 'resam-t.ir';
   static String get subDomain => 'basefluttercleangetxapp';
 
   //FileNames

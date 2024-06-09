@@ -23,7 +23,7 @@ enum APISections {
   versions,
   update;
 
-  String get getValue => name;
+  String get getName => name;
 }
 
 enum AppRoutes {
