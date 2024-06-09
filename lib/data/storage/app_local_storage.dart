@@ -126,14 +126,11 @@ class AppLocalStorage {
     String unknown = Texts.to.notAvailableInitials;
 
     appLogPrint('App Version: ${data.appVersions?.versionsList.last.version ?? unknown}');
+    detailsIncluded == true ? appLogPrint('App Version Type: ${data.appVersions?.versionsList.last.versionType ?? unknown}') : null;
+    appLogPrint('App Data Type: ${data.version?.number ?? unknown}');
 
-    if (detailsIncluded == true) {
-      appLogPrint('==> Details:');
-      appLogPrint('App Data Version: ${data.version?.number ?? unknown}');
-      appLogPrint('App Version Type: ${data.appVersions?.versionsList.last.versionType ?? unknown}');
-      appLogPrint('Settings / Dark Mode: ${data.settings?.darkMode}');
-      appLogPrint('Settings / Language: ${data.settings?.language.languageName}');
-    }
+    detailsIncluded == true ? appLogPrint('Settings / Dark Mode: ${data.settings?.darkMode}') : null;
+    detailsIncluded == true ? appLogPrint('Settings / Language: ${data.settings?.language.languageName}') : null;
   }
 
   ///AppData

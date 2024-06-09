@@ -54,13 +54,14 @@ class UpdateController extends CoreController {
   checkUpdate() async {
     AppBottomDialogs().withoutButton(title: Texts.to.updateCheckingUpdate, form: AppProgressIndicator.linear());
     bool internetStatus = await ConnectionChecker.to.checkInternet();
-    popPage();
-    internetStatus ? _checkUpdateFunction() : noInternetConnectionSnackBar();
+    // internetStatus ? await _checkUpdateFunction() : noInternetConnectionSnackBar();
+    await _checkUpdateFunction();
   }
 
-  _checkUpdateFunction() async {
+  Future<void> _checkUpdateFunction() async {
     String version = await checkAvailableVersion();
-    if (version == AppInfo.appCurrentVersion.version) {
+    popPage();
+    if (version == AppInfo.appCurrentVersion.version || version == Texts.to.notAvailable) {
       appLogPrint('No New Version Available');
       AppSnackBar().showSnackBar(message: Texts.to.updateNoUpdateFound);
     } else {

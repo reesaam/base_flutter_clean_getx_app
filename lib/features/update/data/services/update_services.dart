@@ -2,7 +2,7 @@
 // import 'package:injectable/injectable.dart';
 // import 'package:retrofit/retrofit.dart';
 //
-// import '../../../../data/info/app_urls.dart';
+// import '../../../../data/info/app_apis.dart';
 //
 // part 'update_services.g.dart';
 //

@@ -9,5 +9,5 @@ class VersionsLocalDataSourceImpl implements VersionsLocalDataSource {
   const VersionsLocalDataSourceImpl();
 
   @override
-  Future<Either<LocalException, AppVersionModelsList>> getVersions() async => await AppLocalStorage.to.loadAppVersions();
+  Future<Either<LocalException, AppVersionModelsList>> getVersions() async => AppLocalStorage.to.loadAppVersions();
 }
