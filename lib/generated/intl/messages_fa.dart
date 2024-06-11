@@ -70,7 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "notAvailable": MessageLookupByLibrary.simpleMessage("در دسترس نیست"),
         "notAvailableInitials": MessageLookupByLibrary.simpleMessage("ناموجود"),
         "notFoundPageName":
-            MessageLookupByLibrary.simpleMessage("Page Not Found"),
+            MessageLookupByLibrary.simpleMessage("صفحه پیدا نشد"),
         "ok": MessageLookupByLibrary.simpleMessage("تایید"),
         "settingsAppbarMenuResetSettings":
             MessageLookupByLibrary.simpleMessage("بازنشانی همه تنظیمات"),

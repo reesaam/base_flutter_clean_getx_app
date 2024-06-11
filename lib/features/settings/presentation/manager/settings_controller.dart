@@ -70,8 +70,6 @@ class SettingsController extends CoreController {
     popPage();
     Get.updateLocale(selectedLanguage.value.getLocale);
     Get.reloadAll();
-    refresh();
-    update();
   }
 
   functionDarkModeOnChange(bool value) {

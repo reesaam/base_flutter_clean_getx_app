@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_base_clean_getx_app/core/app_localization.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../resources/app_enums.dart';

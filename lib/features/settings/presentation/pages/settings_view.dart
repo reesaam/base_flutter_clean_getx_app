@@ -30,21 +30,21 @@ class SettingsPage extends CoreView<SettingsController> {
   Widget? get bottomNavigationBar => AppBottomNavigationBar(selectedIndex: controller.pageDetail.bottomBarItemNumber);
 
   @override
-  Widget get body => Column(children: [
-        _widgetGeneral(),
-        _widgetUpdate(),
-        _widgetBackup(),
-        _widgetStorage(),
-      ]);
+  Widget get body => Obx(() => Column(children: [
+    _widgetGeneral(),
+    _widgetUpdate(),
+    _widgetBackup(),
+    _widgetStorage(),
+  ]));
 
   Widget _widgetAppbarThreeDotsButton() => AppPopupMenu(listItems: _listAppbarThreeDotsButton, lightColorIcon: false);
 
   List<AppPopupMenuItem> get _listAppbarThreeDotsButton => List.of([AppPopupMenuItem(text: Texts.to.settingsAppbarMenuResetSettings, onTapFunction: () => controller.resetAllSettings())]);
 
   Widget _widgetGeneral() {
-    Widget leadingLanguage() => Obx(() => Text(controller.selectedLanguage.value.getLocale.getLanguageName ?? ''));
+    Widget leadingLanguage() => Text(controller.selectedLanguage.value.getLocale.getLanguageName ?? '');
 
-    Widget leadingDarkMode() => Obx(() => AppSwitch(value: controller.darkMode.value, onChanged: (bool value) => controller.functionDarkModeOnChange(value), enabled: false));
+    Widget leadingDarkMode() => AppSwitch(value: controller.darkMode.value, onChanged: (bool value) => controller.functionDarkModeOnChange(value), enabled: false);
 
     return SettingsSectionWidget(title: Texts.to.settingsSectionTitleGeneral, widgets: [
       SettingsSectionItemWidget(text: Texts.to.settingsSectionTitleGeneralLanguage.withDoubleDots, leading: leadingLanguage(), wholeItemFunction: controller.functionLanguageModal),
